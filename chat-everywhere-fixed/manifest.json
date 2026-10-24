@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Chat Everywhere",
+  "version": "2.2.0",
+  "description": "A floating browser workspace with chat, notes, links, themes, and a snipping tool.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
